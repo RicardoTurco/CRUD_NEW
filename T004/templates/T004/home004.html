@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME 004</title>
+</head>
+<body>
+
+    <h1>Olá mundo 004 ...</h1>
+
+    <p>Agora são: {{ now }}</p>
+
+    <ul>
+        {% for carro in carros %}
+            {% if carro == 'Corsa' %}
+                <li><b>{{ carro }}</b></li>
+            {% else %}
+                <li>{{ carro }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <p>
+        <a href="{% url 'listCategorias' %}">Listagem de Categorias</a><br>
+        <a href="{% url 'listTransacoes' %}">Listagem de Transações</a>
+    </p>
+
+</body>
+</html>

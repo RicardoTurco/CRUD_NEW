@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CATEGORIA</title>
+</head>
+<body>
+
+    voltar para listagem de <a href="{% url 'listCategorias' %}">CATEGORIAS</a>
+
+    <h2>..: Cadastro de Categoria :..</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <br><button type="submit">Salvar</button>
+
+        {% if categoria %}
+            <button><a href="{% url 'deleteCat' categoria.id %}">Remover</a></button>
+        {% endif %}
+    </form>
+
+</body>
+</html>

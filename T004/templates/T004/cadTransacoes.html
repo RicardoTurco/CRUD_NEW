@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TRANSACOES</title>
+</head>
+<body>
+
+    voltar para a listagem de <a href="{% url 'listTransacoes' %}">TRANSAÇÕES</a>
+
+    <h2>Cadastro de Transações</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <br><button type="submit">Salvar</button>
+
+        {% if transacao %}
+            <button><a href="{% url 'deleteTrans' transacao.id %}">Remover</a></button>
+        {% endif %}
+    </form>
+
+</body>
+</html>

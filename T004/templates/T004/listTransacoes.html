@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TRANSAÇÕES</title>
+</head>
+<body>
+
+    voltar para <a href="{% url 'home' %}">HOME</a>
+
+    <h2>..: Listagem de Transações :..</h2>
+
+    <ul>
+        {% for transacao in transacoes %}
+            <li> <b><a href="{% url 'upTransacao' transacao.id %}">{{ transacao.descricao }}</a></b> - {{ transacao.valor }} - {{ transacao.categoria }} - {{ transacao.observacoes }} </li>
+        {% endfor %}
+    </ul>
+
+    <br><a href="{% url 'novaTransacao' %}"><button>Nova</button></a>
+
+</body>
+</html>

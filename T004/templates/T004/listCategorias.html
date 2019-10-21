@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CATEGORIAS</title>
+</head>
+<body>
+
+    voltar para <a href="{% url 'home' %}">HOME</a>
+
+    <h2>..: Listagem de Categorias :..</h2>
+
+    <ul>
+        {% for categoria in categorias %}
+            <li><b><a href="{% url 'upCategoria' categoria.id %}">{{ categoria.nome }}</a></b></li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'novaCategoria' %}"><button>Nova</button></a>
+
+</body>
+</html>
